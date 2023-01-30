@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    >
+    <tr><th>ID</th><th>TITLE</th><th>Director</th><th>GENRE</th></tr>
+    <tr th:each="movie: ${movies}">
+        <td th:text="${movie.id}">movie_id</td>
+        <td th:text="${movie.tltle}">movie_title</td>
+        <td th:text="${movie.director}">movie_director</td>
+        <td th:text="${movie.genre}">movie_grnre</td>
+    </tr>
+</head>
+<body>
+input type="hidden" name="id" th:field="*{id}"/>
+Name:<input type="text" name="name" th:field="*{name}" /><br>
+Price:<input type="text" th:field="*{price}" /><br>
+MODEL: <select th:field="*{model}" /><br>
+<option th:each="m:*{models}" th:value="${m}" th:text="${m}"/>
+</select>
+</body>
+</html>
